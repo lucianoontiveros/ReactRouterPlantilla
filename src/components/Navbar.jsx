@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import icon from "../assets/Icon.png";
 
 const Navbar = () => {
+  const clasesBotonLink =
+    "block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent";
   return (
     <nav className="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -11,12 +14,12 @@ const Navbar = () => {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <img
-            src="https://flowbite.com/docs/images/logo.svg"
+            src={icon}
             className="h-8"
             alt="Flowbite Logo"
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
+            React Router
           </span>
         </NavLink>
         <button
@@ -51,7 +54,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/"
-                className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={clasesBotonLink}
                 aria-current="page"
               >
                 Home
@@ -60,7 +63,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/about"
-                className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={clasesBotonLink}
               >
                 About
               </NavLink>
@@ -68,7 +71,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/blog"
-                className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={clasesBotonLink}
               >
                 blog
               </NavLink>
