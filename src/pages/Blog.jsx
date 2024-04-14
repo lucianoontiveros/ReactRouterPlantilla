@@ -5,3 +5,5 @@ const Blog = () => {
 };
 
 export default Blog;
+
+export const loaderBlog = async () => {};

@@ -1,8 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import icon from "../assets/Icon.png";
+import { hookContext } from "../context/UserContext";
 
 const Navbar = () => {
+  const { user } = hookContext();
+
   const clasesBotonLink =
     "block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent";
   return (
@@ -68,14 +71,18 @@ const Navbar = () => {
                 About
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/blog"
-                className={clasesBotonLink}
-              >
-                blog
-              </NavLink>
-            </li>
+            {user ? (
+              <li>
+                <NavLink
+                  to="/blog"
+                  className={clasesBotonLink}
+                >
+                  blog
+                </NavLink>
+              </li>
+            ) : (
+              ""
+            )}
           </ul>
         </div>
       </div>
