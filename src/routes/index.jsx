@@ -4,6 +4,8 @@ import About from "../pages/About.jsx";
 import Blog from "../pages/Blog.jsx";
 import NotFound from "../pages/NotFound.jsx";
 import LayoutPublic from "../layout/LayoutPublic.jsx";
+import LayaoutPrivate from "../layout/LayaoutPrivate.jsx";
+import Dashboard from "../pages/Dashboard.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +24,11 @@ export const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog />,
+      },
+      {
+        path: "/dashboard",
+        element: <LayaoutPrivate />,
+        children: [{ index: true, element: <Dashboard /> }],
       },
     ],
   },
