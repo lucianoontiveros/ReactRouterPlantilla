@@ -4,13 +4,13 @@ import icon from "../assets/Icon.png";
 import { hookContext } from "../context/UserContext";
 
 const Navbar = () => {
-  const { user } = hookContext();
+  const { user, setUser } = hookContext();
 
   const clasesBotonLink =
-    "block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent";
+    "block p-2 py-2 px-3a md:p-0 rounded hover:bg-white hover:text-black md:hover:bg-transparent md:border-0 md:hover:text-green-400";
   return (
-    <nav className="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="bg-gray-800 border-gray-700 text-slate-100">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 text-slate-100">
         <NavLink
           to="/"
           href="#"
@@ -21,14 +21,14 @@ const Navbar = () => {
             className="h-8"
             alt="Flowbite Logo"
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            React Router
+          <span className="self-center text-2xl font-semibold whitespace-nowrap">
+            UtilityDev
           </span>
         </NavLink>
         <button
           data-collapse-toggle="navbar-solid-bg"
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="navbar-solid-bg"
           aria-expanded="false"
         >
@@ -50,10 +50,10 @@ const Navbar = () => {
           </svg>
         </button>
         <div
-          className="hidden w-full md:block md:w-auto"
+          className="hidden w-full  md:block md:w-auto"
           id="navbar-solid-bg"
         >
-          <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+          <ul className="flex flex-col font-medium mt-4 rounded-lg bg-green-700 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
             <li>
               <NavLink
                 to="/"
@@ -71,7 +71,7 @@ const Navbar = () => {
                 About
               </NavLink>
             </li>
-            {user ? (
+            {user && (
               <li>
                 <NavLink
                   to="/blog"
@@ -80,8 +80,17 @@ const Navbar = () => {
                   blog
                 </NavLink>
               </li>
-            ) : (
-              ""
+            )}
+            {user && (
+              <li>
+                <NavLink
+                  to="/Dashboard"
+                  className={clasesBotonLink}
+                >
+                  Dashboard
+                </NavLink>
+                <button onClick={() => setUser(false)}>LogOut</button>
+              </li>
             )}
           </ul>
         </div>
