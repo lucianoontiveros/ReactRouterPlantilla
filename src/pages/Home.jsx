@@ -15,11 +15,11 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-slate-50 min-h-[85vh] text-slate-200 flex flex-wrap justify-around p-3 items-center">
+    <div className="bg-slate-50 min-h-[79vh] text-slate-200 flex flex-wrap justify-around p-3 items-center">
       <div className=" p-2">
         <div className="text-green-500 m-2">
-          <h1 className="text-7xl">PLANTILLA DE REACT</h1>
-          <h1 className="text-7xl">ROUTER 6.4</h1>
+          <h1 className="text-3xl md:text-7xl">PLANTILLA DE REACT</h1>
+          <h1 className="text-5xl md:text-7xl">ROUTER 6.4</h1>
           <p className="p-0 mt-5 text-black text-xl">
             React Router 6.4 ofrece varias mejoras y características nuevas que
             pueden ser útiles para la gestión de rutas
@@ -129,19 +129,19 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <div className="mt-20">
+        <div className="mt-20 mb-4">
           <button
             onClick={handleLogin}
             type="button"
-            className="text-white w-[100%] bg-gray-800 dark:bg-blue-500 cursor-not-allowed font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-            disabled
+            className="text-white w-[100%] bg-gray-800 dark:bg-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Login
           </button>
         </div>
       </div>
-      <div>
+      <div className="mt-5 md:mt-0">
         <img
+          className="w-[250px] md:w-[700px]"
           src={Portada}
           width="700px"
           alt=""
